@@ -1,24 +1,22 @@
 // 1. Qué son los Arrays
 // 1.1 Crea una función llamada `procesarPedido` que recibe un array `pedido`.
 // Debes sacar el primer elemento (nombre del cliente), añadir "bebida" al inicio del array y añadir el nombre del cliente al final.
-function procesarPedido(pedido) {
+function procesarPedido(pedido = []) {
     // Tu código aquí
-    const pedidoArray = ["Eduardo", "Pizza", "Lomito Arabe", "Chipa Guazú"];
-    const cliente = pedidoArray.shift();
-    pedidoArray.unshift("bebida");
-    pedidoArray.push(cliente);
-    return pedidoArray;
+    const cliente = pedido.shift();
+    pedido.unshift("bebida");
+    pedido.push(cliente);
+    return pedido;
 }
 console.log(procesarPedido());
 
 // 2. Iteración de Arrays en Javascript
 // 2.1 Crea una función llamada `sumarPares` que reciba un array de números.
 // Debes iterar sobre el array, sumar todos los números pares y devolver la suma.
-function sumarPares(numeros) {
+function sumarPares(numeros = []) {
     let suma = 0
     // tu código aquí
-    let numerosArray = [10, 11, 12, 13, 14, 15];
-    for (const elemento of numerosArray) {
+    for (const elemento of numeros) {
         if (elemento % 2 === 0 ){
             suma = suma + elemento;
         }
@@ -81,16 +79,16 @@ console.log(position); // -> [0, 2]
 // 6. Algoritmos con Arrays
 // 6.1 Crea una función llamada `findMinMaxPages` que reciba un array de números (representando el número de páginas de libros).
 // La función debe devolver un array con dos posiciones: el índice del libro con menos páginas y el índice del libro con más páginas.
-function findMinMaxPages(books) {
+function findMinMaxPages(libros) {
     // Tu código aquí
     let minIndex = 0;
     let maxIndex = 0;
 
-    for (let i = 1; i < books.length; i++) {
-        if (books[i] < books[minIndex]) {
+    for (let i = 1; i < libros.length; i++) {
+        if (libros[i] < libros[minIndex]) {
         minIndex = i;
     }
-        if (books[i] > books[maxIndex]) {
+        if (libros[i] > libros[maxIndex]) {
         maxIndex = i;
         }
     }
